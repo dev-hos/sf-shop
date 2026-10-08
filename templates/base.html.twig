@@ -6,6 +6,13 @@
     <title>{% block title %}Shop{% endblock %}</title>
     {% block stylesheets %}
     {% endblock %}
+    <script>
+      try {
+        const stored = localStorage.getItem("theme");
+        const dark = stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch (e) {}
+    </script>
     {% block javascripts %}
       {% block importmap %}
         {{ importmap('app') }}{% endblock %}
@@ -18,6 +25,15 @@
         <nav class="flex items-center gap-6 text-sm text-muted-foreground">
           <a href="{{ path('app_home') }}" class="transition-colors hover:text-foreground">Produits</a>
           <a href="#" class="transition-colors hover:text-foreground">Panier</a>
+          <twig:Button
+            variant="ghost"
+            size="icon"
+            data-controller="theme"
+            data-action="click->theme#toggle"
+            aria-label="Changer de thème">
+            <twig:ux:icon name="lucide:moon" class="size-4 dark:hidden" />
+            <twig:ux:icon name="lucide:sun" class="hidden size-4 dark:block" />
+          </twig:Button>
         </nav>
       </div>
     </header>
