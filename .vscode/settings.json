@@ -1,0 +1,43 @@
+{
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+
+    "intelephense.environment.phpVersion": "8.5.0",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/vendor/**/{Tests,tests}/**",
+        "**/vendor/**/vendor/**",
+        "**/var/cache/**",
+        "**/var/log/**"
+    ],
+
+    "files.associations": {
+        "*.html.twig": "twig"
+    },
+    "[twig]": {
+        "editor.defaultFormatter": "sohophp.twig-plus",
+        "editor.formatOnSave": true
+    },
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+        "twig": "html"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer",
+        "editor.formatOnSave": true
+    },
+    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.config": ".php-cs-fixer.dist.php",
+
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.suggestSelection": "first",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "symfony-ux-twig-component.enabled": true
+}
