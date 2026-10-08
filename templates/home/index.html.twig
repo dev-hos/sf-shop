@@ -8,10 +8,15 @@
 
   <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
     {% for product in products %}
-      <div class="rounded-xl border bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
-        <h2 class="font-semibold">{{ product.name }}</h2>
-        <p class="text-sm text-gray-500">{{ product.price.format() }}</p>
-      </div>
+      <twig:Card>
+        <twig:Card:Header>
+          <twig:Card:Title>{{ product.name }}</twig:Card:Title>
+          <twig:Card:Description>{{ product.price.format() }}</twig:Card:Description>
+        </twig:Card:Header>
+        <twig:Card:Footer>
+          <twig:Button class="w-full">Ajouter au panier</twig:Button>
+        </twig:Card:Footer>
+      </twig:Card>
     {% endfor %}
   </div>
 {% endblock %}

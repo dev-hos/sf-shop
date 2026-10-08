@@ -11,13 +11,13 @@
         {{ importmap('app') }}{% endblock %}
     {% endblock %}
   </head>
-  <body class="flex min-h-screen flex-col bg-white text-neutral-900 antialiased">
-    <header class="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
+  <body class="flex min-h-screen flex-col antialiased">
+    <header class="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
       <div class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="{{ path('app_home') }}" class="font-semibold tracking-tight">Shop</a>
-        <nav class="flex items-center gap-6 text-sm text-neutral-600">
-          <a href="{{ path('app_home') }}" class="transition-colors hover:text-neutral-900">Produits</a>
-          <a href="#" class="transition-colors hover:text-neutral-900">Panier</a>
+        <nav class="flex items-center gap-6 text-sm text-muted-foreground">
+          <a href="{{ path('app_home') }}" class="transition-colors hover:text-foreground">Produits</a>
+          <a href="#" class="transition-colors hover:text-foreground">Panier</a>
         </nav>
       </div>
     </header>
@@ -27,7 +27,7 @@
       {% endblock %}
     </main>
 
-    <footer class="border-t py-6 text-center text-sm text-neutral-500">
+    <footer class="border-t py-6 text-center text-sm text-muted-foreground">
       © {{ 'now'|date('Y') }} Shop
     </footer>
   </body>
