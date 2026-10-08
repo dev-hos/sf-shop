@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Boutique{% endblock %}
+
+{% block body %}
+  <h1 class="text-3xl font-bold tracking-tight">Nos produits</h1>
+
+  <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {% for product in products %}
+      <div class="rounded-xl border p-4">
+        <h2 class="font-semibold">{{ product.name }}</h2>
+        <p class="text-sm text-gray-500">{{ product.price.format() }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
