@@ -10,7 +10,11 @@
     {% for product in products %}
       <twig:Card>
         <twig:Card:Header>
-          <twig:Card:Title>{{ product.name }}</twig:Card:Title>
+          <twig:Card:Title>
+            <a href="{{ path('app_product_show', {slug: product.slug}) }}" class="hover:underline">
+              {{ product.name }}
+            </a>
+          </twig:Card:Title>
           <twig:Card:Description>{{ product.price.format() }}</twig:Card:Description>
         </twig:Card:Header>
         <twig:Card:Footer>

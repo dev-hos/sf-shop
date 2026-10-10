@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ product.name }}{% endblock %}
+
+{% block body %}
+  <a href="{{ path('app_home') }}" class="text-sm text-muted-foreground hover:text-foreground">
+    ← Retour aux produits
+  </a>
+
+  <div class="mt-6 max-w-2xl">
+    <h1 class="text-3xl font-bold tracking-tight">{{ product.name }}</h1>
+    <p class="mt-2 text-2xl">{{ product.price.format() }}</p>
+    <p class="mt-4 text-muted-foreground">{{ product.description }}</p>
+    <twig:Button class="mt-6">Ajouter au panier</twig:Button>
+  </div>
+{% endblock %}
