@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace App\Shared;
 
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Embeddable]
 final readonly class Money
 {
-    public function __construct(public int $amount, public string $currency)
-    {
+    public function __construct(
+        #[ORM\Column(type: 'integer')]
+        public int $amount,
+        #[ORM\Column(length: 3)]
+        public string $currency,
+    ) {
         if ($amount < 0) {
             throw new \InvalidArgumentException(sprintf('Amount cannot be negative, got %d.', $amount));
         }
