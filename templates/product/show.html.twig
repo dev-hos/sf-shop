@@ -12,6 +12,12 @@
     <h1 class="text-3xl font-bold tracking-tight">{{ product.name }}</h1>
     <p class="mt-2 text-2xl">{{ product.price.format() }}</p>
     <p class="mt-4 text-muted-foreground">{{ product.description }}</p>
-    <twig:Button class="mt-6">Ajouter au panier</twig:Button>
+    <twig:Button
+      data-controller="add-to-cart"
+      data-add-to-cart-name-value="{{ product.name }}"
+      data-action="click->add-to-cart#add"
+      class="mt-6">
+      Ajouter au panier
+    </twig:Button>
   </div>
 {% endblock %}
